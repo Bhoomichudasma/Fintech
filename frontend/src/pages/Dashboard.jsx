@@ -279,14 +279,13 @@ export default function Dashboard() {
               <NewsList items={data?.news || []} />
             </div>
 
-            <div className="grid gap-4 lg:grid-cols-3">
-              <div className="lg:col-span-2">
+            <div className="grid gap-4 lg:grid-cols-3 lg:items-start">
+              <div className="space-y-4 lg:col-span-2">
                 <Heatmap symbols={compare.symbols} matrix={compare.correlation_matrix} />
+                <ComparePicker companies={companies} selection={compareSelection} onChange={setCompareSelection} />
               </div>
               <TopMovers items={compare.items} />
             </div>
-
-            <ComparePicker companies={companies} selection={compareSelection} onChange={setCompareSelection} />
           </div>
         </div>
       </div>
